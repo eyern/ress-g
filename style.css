@@ -33,7 +33,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #1f1f2c;
+  color: #00809D;
   line-height: 1.3;
   font-weight: 700;
 }
@@ -1971,42 +1971,50 @@ img {
   color: #00809D;
 }
 
-/* :: 16.0 Breadcumb Area CSS */
-.breadcrumb-area {
-  position: relative;
-  z-index: 10;
-  width: 100%;
-}
-
-.breadcrumb-area .breadcrumb {
+.breadcrumb-container {
+  /* Set the background image and properties */
+  background-image: url('img/retreat/r-4.jpg'); /* Replace with your image path */
+  background-position: center;
+  background-size: cover; /* Ensures the image covers the entire area */
+  padding: 100px 116px; /* Add padding for height and spacing */
+  list-style: none;
   margin: 0;
+  overflow: hidden; /* To contain floated elements if used */
+}
+
+.breadcrumb {
+  display: flex; /* Use flexbox for easy alignment */
+  flex-wrap: wrap;
+  gap: 0.5rem; /* Space between items */
   padding: 0;
-  padding-top: 30px;
-  background-color: transparent;
+  margin: 0;
+  list-style: none;
 }
 
-.breadcrumb-area .breadcrumb .breadcrumb-item {
-  font-size: 15px;
-  color: #959595;
-  font-weight: 600;
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
 }
 
-.breadcrumb-area .breadcrumb .breadcrumb-item a {
-  font-size: 15px;
-  color: #1f1f2c;
-  font-weight: 600;
+.breadcrumb-item a {
+  color: #00809D; /* Text color that contrasts well with the background image */
+  text-decoration: none;
+  /* Add text shadow or stroke for better readability over complex images */
 }
 
-.breadcrumb-area .breadcrumb .breadcrumb-item a:hover,
-.breadcrumb-area .breadcrumb .breadcrumb-item a:focus {
-  color: #00809D;
+.breadcrumb-item.active {
+  color: #000; /* Color for the current page */
 }
 
-.breadcrumb-area .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
-  color: #1f1f2c;
-  font-family: 'FontAwesome';
-  content: "\f105";
+/* Add a separator using a pseudo-element */
+.breadcrumb-item:not(:last-child)::after {
+  content: '>'; /* or a slash '/' or an SVG icon */
+  margin-left: 0.5rem;
+  color: white; /* Separator color */
+  text-shadow: 1px 1px 2px black;
 }
+
 
 /* :: 17.0 Blog Area CSS */
 .single-blog-post {
@@ -2890,3 +2898,159 @@ img {
   font-size: 18px;
   letter-spacing: 2px;
 }
+
+.video-box-container {
+  /* Set your background image here */
+  background-image: url('img/way-cross.jpg');
+  background-size: cover;
+  background-position: center;
+  
+  /* Create the box shape and padding */
+  padding: 40px; /* Adjust this to show more/less of the background image */
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  
+  /* Maintain 16:9 Aspect Ratio for the video box */
+  position: relative;
+  overflow: hidden;
+}
+
+.video-box-container iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Modern CSS for [responsive video containers](https://tylerduprey-52451.medium.com/a-perfect-video-container-with-css-37fd454c5eb5) */
+  border-radius: 8px;
+  display: block;
+}
+
+
+/* Container Layout */
+.services-container {
+	display: flex;
+	flex-wrap: wrap; /* Allows cards to wrap to the next line */
+	justify-content: center;
+	gap: 20px;
+	padding: 40px 20px;
+  }
+  
+  /* Individual Card Box */
+  .service-card {
+	flex: 1 1 300px; /* Grow, shrink, and base width of 300px */
+	max-width: 350px;
+	background: #ffffff;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	transition: transform 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .service-card:hover {
+	transform: translateY(-5px);
+  }
+  
+  /* Responsive Images */
+  .service-img img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover; /* Keeps aspect ratio while filling the box */
+	display: block;
+  }
+  
+  /* Content Styling */
+  .service-content {
+	padding: 20px;
+	text-align: center;
+  }
+  
+  .service-content h3 {
+	margin-bottom: 10px;
+	color: #00809D;
+	font-size: 22px;
+  }
+  
+  .service-content p {
+	color: #000000;
+	font-size: 0.95rem;
+  }
+  
+  /* Media Query for Mobile */
+  @media (max-width: 768px) {
+	.service-card {
+	  flex: 1 1 100%; /* Stacks cards vertically on small screens */
+	}
+  }
+
+  .booking-cta {
+    background-color: #f8f9fa; /* Light neutral background */
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background-color: #00809D; /* Action color */
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #00809D; /* Darken on hover */
+  }
+  
+  .header-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .responsive-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .text-overlay h1 {
+    font-size: 4vw; /* Uses viewport width for responsive font size */
+  }
+
+  .banner-container {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Adjust banner height */
+    overflow: hidden;
+  }
+  
+  .video-foreground iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 56.25vw; /* 16:9 ratio */
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Prevents interaction with video */
+  }
+  
+  .banner-content {
+    position: relative;
+    z-index: 2; /* Ensures text stays above video */
+    color: white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  
