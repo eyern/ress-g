@@ -1973,7 +1973,7 @@ img {
 
 .breadcrumb-container {
   /* Set the background image and properties */
-  background-image: url('img/bg-img/main_slider/home-2.jpg'); /* Replace with your image path */
+  background-image: url('img/bg-img/home-2.jpg'); /* Replace with your image path */
   background-position: center;
   background-size: cover; /* Ensures the image covers the entire area */
   padding: 100px 116px; /* Add padding for height and spacing */
